@@ -33,183 +33,163 @@ $black: #111111;
     "Segoe UI Emoji",
     "Segoe UI Symbol",
     sans-serif;
-    letter-spacing: 0;
-    line-height: 1.5;
+}
+
+@mixin LETTER {
+  letter-spacing: 0;
+  line-height: 1.5;
 }
 
 // Font Weights
 @mixin LIGHT {
   @include FONT-FAMILY;
+  @include LETTER;
   font-weight: 300;
 }
 
 @mixin REGULAR {
   @include FONT-FAMILY;
+  @include LETTER;
   font-weight: 400;
 }
 
 @mixin MEDIUM {
   @include FONT-FAMILY;
+  @include LETTER;
   font-weight: 500;
 }
 
 @mixin SEMIBOLD {
   @include FONT-FAMILY;
+  @include LETTER;
   font-weight: 600;
 }
 
 @mixin BOLD {
   @include FONT-FAMILY;
+  @include LETTER;
   font-weight: 700;
-}
-
-@mixin LINE-HEIGHT {
-  letter-spacing: 1.4;
 }
 
 // Typography
 @mixin Title1 {
   @include BOLD;
   font-size: 32px;
-  line-height: 1.4;
 }
 
 @mixin Title2 {
   @include SEMIBOLD;
   font-size: 32px;
-  line-height: 1.4;
 }
 
 @mixin Title3 {
   @include BOLD;
   font-size: 30px;
-  line-height: 1.4;
 }
 
 @mixin Title4 {
   @include SEMIBOLD;
   font-size: 30px;
-  line-height: 1.4;
 }
 
 @mixin Title5 {
   @include BOLD;
   font-size: 24px;
-  line-height: 1.4;
 }
 
 @mixin Title6 {
   @include SEMIBOLD;
   font-size: 20px;
-  line-height: 1.4;
 }
 
 @mixin Title7 {
   @include SEMIBOLD;
   font-size: 20px;
-  line-height: 1.4;
 }
 
 @mixin Subtitle1 {
   @include BOLD;
   font-size: 18px;
-  line-height: 1.4;
 }
 
 @mixin Subtitle2 {
   @include SEMIBOLD;
   font-size: 18px;
-  line-height: 1.4;
 }
 
 @mixin Subtitle3 {
   @include SEMIBOLD;
   font-size: 16px;
-  line-height: 1.4;
 }
 
 @mixin Subtitle4 {
   @include SEMIBOLD;
   font-size: 12px;
-  line-height: 1.4;
 }
 
 @mixin Body1 {
   @include MEDIUM;
   font-size: 18px;
-  line-height: 1.4;
 }
 
 @mixin Body2 {
   @include MEDIUM;
   font-size: 16px;
-  line-height: 1.4;
 }
 
 @mixin Body3 {
   @include SEMIBOLD;
   font-size: 14px;
-  line-height: 1.4;
 }
 
 @mixin Body4 {
   @include MEDIUM;
   font-size: 14px;
-  line-height: 1.4;
 }
 
 @mixin Caption1 {
   @include BOLD;
   font-size: 12px;
-  line-height: 1.4;
 }
 
 @mixin Caption2 {
   @include SEMIBOLD;
   font-size: 12px;
-  line-height: 1.4;
 }
 
 @mixin Caption3 {
   @include MEDIUM;
   font-size: 12px;
-  line-height: 1.4;
 }
 
 @mixin Caption4 {
   @include LIGHT;
   font-size: 12px;
-  line-height: 1.4;
 }
 
 @mixin Caption5 {
   @include BOLD;
   font-size: 10px;
-  line-height: 1.4;
 }
 
 @mixin Caption6 {
   @include SEMIBOLD;
   font-size: 10px;
-  line-height: 1.4;
 }
 
 @mixin Caption7 {
   @include MEDIUM;
   font-size: 10px;
-  line-height: 1.4;
 }
 
 @mixin Caption8 {
   @include LIGHT;
   font-size: 10px;
-  line-height: 1.4;
 }
 
 @mixin Caption9 {
   @include SEMIBOLD;
   font-size: 8px;
-  line-height: 1.4;
 }
 
 $max-breakpoints: (

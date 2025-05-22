@@ -1,4 +1,5 @@
 @use "@/styles/globals.scss" as *;
+@use "sass:map";
 
 .layout {
   width: 100%;
@@ -14,5 +15,22 @@
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
+    border: 1px solid $gray-600;
+
+    @include Respond(mobile-xl) {
+      max-width: map.get($breakpoints, mobile-xl); // 480px
+    }
+
+    @include Respond(tablet-md) {
+      max-width: map.get($breakpoints, tablet-ㄴmd); // 720px
+    }
+
+    @include Respond(desktop-sm) {
+      max-width: map.get($breakpoints, desktop-sm); // 1024px
+    }
+
+    @include Respond(desktop-lg, min) {
+      max-width: map.get($breakpoints, desktop-lg); // 1440px 이상
+    }
   }
 }
