@@ -3,6 +3,7 @@ import "@/styles/globals.scss";
 import "@/styles/reset.css";
 import Layout from "@/components/Layout/Layout";
 import QueryProvider from "./_components/QueryProvider";
+import MockInterceptorProvider from "./_components/MockInterceptorProvider";
 
 export const metadata: Metadata = {
   title: "My App",
@@ -14,7 +15,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="body">
         <QueryProvider>
-          <Layout>{children}</Layout>
+          <Layout>
+            <MockInterceptorProvider />
+            {children}
+          </Layout>
         </QueryProvider>
       </body>
     </html>

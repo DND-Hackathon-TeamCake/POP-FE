@@ -1,4 +1,4 @@
 export const ENV = {
-  API_BASE_URL: `${process.env.VITE_API_BASE_URL}`,
-  // KAKAO_JAVASCRIPT_KEY: `${process.env.VITE_KAKAO_JAVASCRIPT_KEY}`,
+  API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL,
+  API_MOCKING: process.env.NEXT_PUBLIC_API_MOCKING,
 } as const;
