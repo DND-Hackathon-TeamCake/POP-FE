@@ -1,0 +1,35 @@
+@use "@/styles/globals.scss" as *;
+
+.box {
+  border-radius: 16px;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.3s ease;
+}
+
+.lg {
+  width: 272px;
+  height: 354px;
+}
+
+.md {
+  width: 150px;
+  height: 221px;
+}
+
+.blue {
+  background: $point-blue-radix;
+}
+.yellow {
+  background: $point-yellow-radix;
+}
+.red {
+  background: $point-red-radix;
+}
+.pink {
+  background: $point-pink-radix;
+}
+.green {
+  background: $point-green-radix;
+}
