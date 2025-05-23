@@ -10,7 +10,7 @@ const MainPage = () => {
   const router = useRouter();
 
   const handleKakaoLogin = () => {
-    console.log("로그인");
+    window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/oauth2/authorization/kakao`;
     //로그인 처리 결과에 따라 갈지 말지 결정
     router.push("/main");
   };
