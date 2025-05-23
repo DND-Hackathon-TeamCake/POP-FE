@@ -17,6 +17,19 @@ $gray-900: #252a30;
 $gray-950: #15191b;
 $black: #111111;
 
+// point Palette
+$point-blue: #4279e9;
+$point-yellow: #fff97c;
+$point-red: #ff644c;
+$point-pink: #dcb5f0;
+$point-green: #1eb186;
+
+$point-blue-radix: radial-gradient(59.96% 72.25% at 50% 50%, #1d62c4 18.43%, #4287e9 100%);
+$point-yellow-radix: radial-gradient(59.96% 72.25% at 50% 50%, #fff97c 21.82%, #c9ff96 100%);
+$point-red-radix: radial-gradient(58.69% 63.48% at 50% 50%, #ff644c 34.56%, #ff9185 96.29%);
+$point-pink-radix: radial-gradient(59.96% 72.25% at 50% 50%, #dcb5f0 18.43%, #f4e0ff 100%);
+$point-green-radix: radial-gradient(59.96% 72.25% at 50% 50%, #35d686 32.69%, #1eb19d 100%);
+
 @mixin FONT-FAMILY {
   font-family:
     "Pretendard",
