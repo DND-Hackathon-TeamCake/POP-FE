@@ -148,6 +148,16 @@ $point-green-radix: radial-gradient(59.96% 72.25% at 50% 50%, #35d686 32.69%, #1
   font-size: 18px;
 }
 
+@mixin Subtitle6 {
+  @include REGULAR;
+  font-size: 24px;
+}
+
+@mixin Subtitle7 {
+  @include REGULAR;
+  font-size: 16px;
+}
+
 @mixin Body1 {
   @include MEDIUM;
   font-size: 18px;
