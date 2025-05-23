@@ -1,7 +1,12 @@
 export const ICONS = {
   test: "/assets/icons/test.svg",
   kakao: "assets/icons/kakao.svg",
-  
+  "box": "/assets/icons/box.svg",
+  "pencil": "/assets/icons/pencil.svg",
+  "solar": "/assets/icons/solar.svg",
+  "rightArrow": "/assets/icons/rightArrow.svg",
+  "vector": "/assets/icons/vector.svg",
+  "motif": "/assets/icons/motif.svg",
   "motif1-blue": "/assets/icons/motif1-blue.svg",
   "motif1-green": "/assets/icons/motif1-green.svg",
   "motif1-purple": "/assets/icons/motif1-purple.svg",
