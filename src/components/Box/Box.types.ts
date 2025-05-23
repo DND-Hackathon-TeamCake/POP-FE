@@ -1,5 +1,5 @@
 export type BoxColorType = "blue" | "yellow" | "red" | "pink" | "green";
-export type BoxSizeType = "md" | "lg";
+export type BoxSizeType = "md" | "lg" | "col";
 
 export interface BoxProps {
   type: BoxColorType;
