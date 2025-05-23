@@ -1,22 +1,12 @@
-"use client";
 
-import { useQuery } from "@tanstack/react-query";
-import { getUser } from "@/services/user/getUser";
+import Icon from "@/components/Icon/Icon";
 
 export default function Test() {
-  const { data: user, isLoading } = useQuery({
-    queryKey: ["user"],
-    queryFn: getUser,
-  });
-
-  if (isLoading) return <p>로디이잉...</p>;
-
   return (
     <div>
       <h1>테스트 페이지</h1>
       <p>
-        이름: {user.name}
-        <br /> (ID: {user.id})
+        <Icon name="motif2-red" />
       </p>
     </div>
   );

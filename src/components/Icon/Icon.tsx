@@ -6,12 +6,16 @@ interface IconProps {
   height?: number | string;
 }
 
-// 사용법: <Icon name="test" width={100} height={100} />
 const Icon = ({ name, width = 128, height = 128 }: IconProps) => {
+  const src = ICONS[name];
   return (
-    <div style={{ width, height }}>
-      <img src={ICONS[name]} alt={`${name} icon`} width="100%" height="100%" loading="lazy" />
-    </div>
+    <img
+      src={src}
+      alt={`${name} icon`}
+      width={width}
+      height={height}
+      loading="lazy"
+    />
   );
 };
 
