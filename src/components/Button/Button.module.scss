@@ -31,6 +31,21 @@
   border-radius: 12px;
 }
 
+.button-store {
+  display: flex;
+  width: 353px;
+  height: 60px;
+  padding: 20.365px 55.439px;
+  justify-content: center;
+  align-items: center;
+  gap: 11.314px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #111;
+  color: white;
+  @include Title7;
+}
+
 .l {
   width: 100%;
   padding: 16px 24px;
