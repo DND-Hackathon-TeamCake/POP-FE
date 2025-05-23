@@ -1,0 +1,271 @@
+@use "font.scss";
+@use "sass:map";
+
+// Grayscale Palette
+$white: #ffffff;
+$gray-50: #f6f8fd;
+$gray-100: #eef0f6;
+$gray-150: #dce2e8;
+$gray-200: #cbd1d9;
+$gray-300: #b9bfc7;
+$gray-400: #a1aab1;
+$gray-500: #7f8996;
+$gray-600: #626c79;
+$gray-700: #49535c;
+$gray-800: #383e45;
+$gray-900: #252a30;
+$gray-950: #15191b;
+$black: #111111;
+
+@mixin FONT-FAMILY {
+  font-family:
+    "Pretendard",
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    "Helvetica Neue",
+    "Segoe UI",
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    "Malgun Gothic",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    sans-serif;
+}
+
+@mixin LETTER {
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+// Font Weights
+@mixin LIGHT {
+  @include FONT-FAMILY;
+  @include LETTER;
+  font-weight: 300;
+}
+
+@mixin REGULAR {
+  @include FONT-FAMILY;
+  @include LETTER;
+  font-weight: 400;
+}
+
+@mixin MEDIUM {
+  @include FONT-FAMILY;
+  @include LETTER;
+  font-weight: 500;
+}
+
+@mixin SEMIBOLD {
+  @include FONT-FAMILY;
+  @include LETTER;
+  font-weight: 600;
+}
+
+@mixin BOLD {
+  @include FONT-FAMILY;
+  @include LETTER;
+  font-weight: 700;
+}
+
+// Typography
+@mixin Title1 {
+  @include BOLD;
+  font-size: 32px;
+}
+
+@mixin Title2 {
+  @include SEMIBOLD;
+  font-size: 32px;
+}
+
+@mixin Title3 {
+  @include BOLD;
+  font-size: 30px;
+}
+
+@mixin Title4 {
+  @include SEMIBOLD;
+  font-size: 30px;
+}
+
+@mixin Title5 {
+  @include BOLD;
+  font-size: 24px;
+}
+
+@mixin Title6 {
+  @include SEMIBOLD;
+  font-size: 20px;
+}
+
+@mixin Title7 {
+  @include SEMIBOLD;
+  font-size: 20px;
+}
+
+@mixin Subtitle1 {
+  @include BOLD;
+  font-size: 18px;
+}
+
+@mixin Subtitle2 {
+  @include SEMIBOLD;
+  font-size: 18px;
+}
+
+@mixin Subtitle3 {
+  @include SEMIBOLD;
+  font-size: 16px;
+}
+
+@mixin Subtitle4 {
+  @include SEMIBOLD;
+  font-size: 12px;
+}
+
+@mixin Body1 {
+  @include MEDIUM;
+  font-size: 18px;
+}
+
+@mixin Body2 {
+  @include MEDIUM;
+  font-size: 16px;
+}
+
+@mixin Body3 {
+  @include SEMIBOLD;
+  font-size: 14px;
+}
+
+@mixin Body4 {
+  @include MEDIUM;
+  font-size: 14px;
+}
+
+@mixin Caption1 {
+  @include BOLD;
+  font-size: 12px;
+}
+
+@mixin Caption2 {
+  @include SEMIBOLD;
+  font-size: 12px;
+}
+
+@mixin Caption3 {
+  @include MEDIUM;
+  font-size: 12px;
+}
+
+@mixin Caption4 {
+  @include LIGHT;
+  font-size: 12px;
+}
+
+@mixin Caption5 {
+  @include BOLD;
+  font-size: 10px;
+}
+
+@mixin Caption6 {
+  @include SEMIBOLD;
+  font-size: 10px;
+}
+
+@mixin Caption7 {
+  @include MEDIUM;
+  font-size: 10px;
+}
+
+@mixin Caption8 {
+  @include LIGHT;
+  font-size: 10px;
+}
+
+@mixin Caption9 {
+  @include SEMIBOLD;
+  font-size: 8px;
+}
+
+$max-breakpoints: (
+  "mobile": 767px,
+  "tablet": 1024px,
+);
+
+$min-breakpoints: (
+  "mobile": 0px,
+  "tablet": 768px,
+);
+
+@mixin Size($device) {
+  @media (min-width: map.get($min-breakpoints, $device)) and (max-width: map.get($max-breakpoints, $device)) {
+    @content;
+  }
+}
+
+$breakpoints: (
+  mobile-sm: 0px,
+  mobile-md: 360px,
+  mobile-lg: 400px,
+  mobile-xl: 480px,
+  tablet-sm: 600px,
+  tablet-md: 720px,
+  tablet-lg: 840px,
+  tablet-xl: 960px,
+  desktop-sm: 1024px,
+  desktop-md: 1280px,
+  desktop-lg: 1440px,
+  desktop-xl: 1600px,
+  desktop-xxl: 1920px,
+);
+
+@mixin Respond($key, $type: between) {
+  $keys: map.keys($breakpoints);
+  $index: index($keys, $key);
+  $min: map.get($breakpoints, $key);
+  $max: null;
+
+  @if $index < length($keys) {
+    $next-key: nth($keys, $index + 1);
+    $next-min: map.get($breakpoints, $next-key);
+    $max: calc(#{$next-min} - 0.02px);
+  }
+
+  @if $type == min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else if $type == max {
+    @if $max != null {
+      @media (max-width: $max) {
+        @content;
+      }
+    }
+  } @else if $type == between {
+    @if $max != null {
+      @media (min-width: $min) and (max-width: $max) {
+        @content;
+      }
+    } @else {
+      @media (min-width: $min) {
+        @content;
+      }
+    }
+  }
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+}
