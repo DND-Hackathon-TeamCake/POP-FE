@@ -16,7 +16,7 @@ const MainPage = () => {
   }, [location, error, depthName]);
 
   const handleKakaoLogin = () => {
-    console.log("로그인");
+    window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/oauth2/authorization/kakao`;
   };
 
   return (
