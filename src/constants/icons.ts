@@ -34,6 +34,7 @@ export const ICONS = {
 
   next: "/assets/icons/next.svg",
   prev: "/assets/icons/prev.svg",
+  defaultPop: "assets/images/default-pop.svg",
 } as const;
 
 export type IconList = keyof typeof ICONS;

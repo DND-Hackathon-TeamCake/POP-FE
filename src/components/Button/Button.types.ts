@@ -1,4 +1,4 @@
-export type ButtonType = "fill" | "button-kakao";
+export type ButtonType = "fill" | "button-kakao" | "button-store";
 
 export type ButtonSize = "s" | "m" | "l";
 

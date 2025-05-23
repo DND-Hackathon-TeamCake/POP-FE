@@ -9,11 +9,16 @@ import type { letter } from "@/types/letter";
 import Box from "../Box/Box";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
+import router from "next/router";
+import { useSelectedLetter } from "@/store/useSelectedLetter";
+import { useRouter } from "next/navigation";
 
 const LetterList = () => {
   const [letters, setLetters] = useState<letter[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<any>(null); // Swiper 제어용
+  const router = useRouter();
+  const setSelectedLetter = useSelectedLetter((state) => state.setSelectedLetter);
 
   useEffect(() => {
     const getLetters = async () => {
@@ -27,6 +32,11 @@ const LetterList = () => {
     getLetters();
   }, []);
 
+  const handlePickClick = () => {
+    const letter = letters[activeIndex];
+    setSelectedLetter(letter);
+    router.push(`/letter/${letter.letterId}`);
+  };
   if (letters.length < 3) {
     return (
       <div className="letter-list-static">
@@ -82,12 +92,11 @@ const LetterList = () => {
         </Swiper>
       </div>
 
-      {/* ✅ 하단 조작 UI 추가 */}
       <div className="letter-actions">
         <div onClick={() => swiperRef.current?.slidePrev()}>
           <Icon name="prev" width={28} height={28} />
         </div>
-        <Button type="fill" size="s">
+        <Button type="fill" size="s" onClick={handlePickClick}>
           Pick
         </Button>
         <div onClick={() => swiperRef.current?.slideNext()}>

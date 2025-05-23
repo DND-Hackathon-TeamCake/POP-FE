@@ -22,4 +22,10 @@ export const mockResponses = {
       },
     ],
   },
+  "/api/letters/1": {
+    letterId: 1,
+    content: "다들 좋은 하루 보내세요~",
+    imageUrl: null,
+    region: "은평구",
+  },
 } as const;
