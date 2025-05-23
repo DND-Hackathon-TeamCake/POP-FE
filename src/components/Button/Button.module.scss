@@ -1,0 +1,41 @@
+@use "@/styles/globals.scss" as *;
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.fill {
+  background-color: $gray-600;
+  color: white;
+}
+
+.l {
+  width: 100%;
+  padding: 16px 24px;
+}
+
+.m {
+  padding: 11px 20px;
+  border-radius: 10px;
+}
+
+.s {
+  padding: 7px 14px;
+  border-radius: 8px;
+}
+
+.icon {
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: inherit;
+}
