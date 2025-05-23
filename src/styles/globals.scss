@@ -127,6 +127,11 @@ $black: #111111;
   font-size: 12px;
 }
 
+@mixin Subtitle5 {
+  @include REGULAR;
+  font-size: 18px;
+}
+
 @mixin Body1 {
   @include MEDIUM;
   font-size: 18px;
