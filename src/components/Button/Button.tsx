@@ -1,27 +1,22 @@
+import React from "react";
 import styles from "./Button.module.scss";
 import { ButtonProps } from "./Button.types";
 
-export default function Button({
-  children,
+const Button: React.FC<ButtonProps> = ({
   type = "fill",
   size = "m",
-  disabled = false,
-  onClick,
   leftIcon,
-  rightIcon,
-  width,
-}: ButtonProps) {
-  let className = `${styles.button} ${styles[type]} ${styles[size]}`;
-
-  if (disabled) {
-    className += ` ${styles.disabled}`;
-  }
+  children,
+  ...rest
+}) => {
+  const className = [styles.button, styles[type], styles[size]].filter(Boolean).join(" ");
 
   return (
-    <button className={className} disabled={disabled} onClick={onClick} style={{ width }}>
-      {leftIcon && <div className={styles.icon}>{leftIcon}</div>}
+    <button className={className} {...rest}>
+      {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
       {children}
-      {rightIcon && <div className={styles.icon}>{rightIcon}</div>}
     </button>
   );
-}
+};
+
+export default Button;

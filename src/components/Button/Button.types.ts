@@ -1,6 +1,6 @@
-export type ButtonType = "fill";
+export type ButtonType = "fill" | "button-kakao";
 
-export type ButtonSize = "l" | "m" | "s";
+export type ButtonSize = "s" | "m" | "l";
 
 export interface ButtonProps {
   children: React.ReactNode;
