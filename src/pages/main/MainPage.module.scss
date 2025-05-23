@@ -3,17 +3,26 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; // 위아래로 분배
+  justify-content: space-between;
   align-items: center;
-  padding: 40px 0;
-  height: 100vh; // 전체 화면 기준으로 정렬
-}
+  height: 100vh;
 
-.title {
-  font-family: "League Gothic";
-  color: var(--Black, #111);
-  font-size: 66px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%;
+  .title {
+    font-family: "League Gothic";
+    color: var(--Black, #111);
+    font-size: 66px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .subtitle {
+    color: #000;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 33.6px */
+  }
 }

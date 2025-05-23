@@ -17,7 +17,18 @@
 
 .button-kakao {
   background-color: $kakao-bg;
-  color: rgba(0, 0, 0, 0.85);
+  color: var(--kakao-text, rgba(0, 0, 0, 0.85));
+  font-family: "Apple SD Gothic Neo";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  width: 353px;
+  height: 52px;
+  padding: 0px 14px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
 }
 
 .l {

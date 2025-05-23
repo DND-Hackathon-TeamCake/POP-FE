@@ -21,14 +21,19 @@ const MainPage = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Pick of Piece!</h1>
+      <h1 className={styles.title}>POP</h1>
+      <p className={styles.subtitle}>
+        Piece of People, <br />
+        단절된 사회를 다시 기억하기 위하여
+      </p>
+      <img src="assets/images/main.svg" alt="main" />
       <Button
         type="button-kakao"
         size="l"
         onClick={handleKakaoLogin}
         leftIcon={<Icon name="kakao" width={16} height={16} />}
       >
-        카카오로 시작하기
+        카카오 로그인
       </Button>
     </div>
   );
