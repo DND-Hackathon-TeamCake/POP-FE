@@ -6,6 +6,6 @@ export interface BoxProps {
   size?: BoxSizeType;
   timestamp: string;
   content: string;
-  buttonLabel: string;
+  onClick: () => void;
   children?: React.ReactNode;
 }

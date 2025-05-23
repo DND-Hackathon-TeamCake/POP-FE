@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Box.module.scss";
 import { BoxProps } from "./Box.types";
 
-const Box: React.FC<BoxProps> = ({ type, size = "md", timestamp, content, children }) => {
+const Box: React.FC<BoxProps> = ({ type, size = "md", timestamp, content, onClick, children }) => {
   const baseClass = styles.box;
   const typeClass = styles[type];
   const sizeClass = styles[size];
@@ -12,7 +12,9 @@ const Box: React.FC<BoxProps> = ({ type, size = "md", timestamp, content, childr
       <div className={styles.top}>{timestamp}</div>
       <div className={styles.middle}>{content}</div>
       <div className={styles.bottom}>
-        <button className={styles.button}>확인하기 {">"}</button>
+        <button className={styles.button} onClick={onClick}>
+          확인하기 {">"}
+        </button>
       </div>
       {children}
     </div>
