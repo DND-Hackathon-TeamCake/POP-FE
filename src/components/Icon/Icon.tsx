@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ICONS, IconList } from "@/constants/icons";
 
 interface IconProps {
@@ -9,6 +10,9 @@ interface IconProps {
 
 const Icon = ({ name, width = 128, height = 128, children }: IconProps) => {
   const src = ICONS[name];
+  const numWidth = typeof width === "string" ? parseInt(width) : width;
+  const numHeight = typeof height === "string" ? parseInt(height) : height;
+
   return (
     <div
       style={{
@@ -17,13 +21,18 @@ const Icon = ({ name, width = 128, height = 128, children }: IconProps) => {
         height,
       }}
     >
-      <img
+      <Image
         src={src}
         alt={`${name} icon`}
-        width="100%"
-        height="100%"
-        style={{ display: "block" }}
-        loading="lazy"
+        width={numWidth}
+        height={numHeight}
+        style={{
+          display: "block",
+          width: "100%",
+          height: "100%",
+          objectFit: "contain", // 이미지 비율 유지
+        }}
+        priority={false} // 필요에 따라 true로 설정
       />
       {children && (
         <div
@@ -40,14 +49,13 @@ const Icon = ({ name, width = 128, height = 128, children }: IconProps) => {
             color: "white",
             fontWeight: "bold",
             textAlign: "center",
-            pointerEvents: "none", // 텍스트 클릭 막기
+            pointerEvents: "none",
           }}
         >
           {children}
         </div>
       )}
     </div>
-
   );
 };
 

@@ -22,7 +22,7 @@ const MainPage = () => {
         Piece of People, <br />
         단절된 사회를 다시 기억하기 위하여
       </p>
-      <img src="assets/images/main.svg" alt="main" />
+      <Icon name="main" width="100%" height="100%" />
       <Button
         type="button-kakao"
         size="l"

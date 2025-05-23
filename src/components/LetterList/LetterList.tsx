@@ -9,14 +9,13 @@ import type { letter } from "@/types/letter";
 import Box from "../Box/Box";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
-import router from "next/router";
 import { useSelectedLetter } from "@/store/useSelectedLetter";
 import { useRouter } from "next/navigation";
 
 const LetterList = () => {
   const [letters, setLetters] = useState<letter[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
-  const swiperRef = useRef<any>(null); // Swiper 제어용
+  const swiperRef = useRef<import("swiper").Swiper | null>(null);
   const router = useRouter();
   const setSelectedLetter = useSelectedLetter((state) => state.setSelectedLetter);
 
