@@ -1,0 +1,28 @@
+@use "@/styles/globals.scss" as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  width: 100%;
+  position: relative;
+  background-color: white;
+}
+
+.back {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.pagename {
+  @include Subtitle6;
+  text-align: center;
+  color: $gray-900;
+}
