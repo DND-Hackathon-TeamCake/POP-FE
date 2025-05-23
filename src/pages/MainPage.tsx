@@ -15,7 +15,7 @@ const MainPage = () => {
     if (error) {
       console.log("위치 권한 허용해라");
     }
-  }, [location, error])
+  }, [location, error, depthName])
   return (
     <div>
 

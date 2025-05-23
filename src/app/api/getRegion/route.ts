@@ -12,7 +12,6 @@ export async function GET(req: NextRequest) {
       status: 400,
     });
   }
-
   try {
     const { data } = await axios.get("https://dapi.kakao.com/v2/local/geo/coord2regioncode.json", {
       params: {
