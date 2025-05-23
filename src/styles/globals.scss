@@ -1,5 +1,6 @@
 @use "font.scss";
 @use "sass:map";
+@use "sass:list";
 
 // Grayscale Palette
 $white: #ffffff;
@@ -231,7 +232,7 @@ $breakpoints: (
   $max: null;
 
   @if $index < length($keys) {
-    $next-key: nth($keys, $index + 1);
+    $next-key: list.nth($keys, $index + 1);
     $next-min: map.get($breakpoints, $next-key);
     $max: calc(#{$next-min} - 0.02px);
   }

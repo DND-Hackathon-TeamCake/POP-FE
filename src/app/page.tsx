@@ -1,3 +1,5 @@
+import MainPage from "@/pages/MainPage";
+
 export default function App() {
-  return <div>메인 앱</div>;
+  return <div><MainPage /></div>;
 }
