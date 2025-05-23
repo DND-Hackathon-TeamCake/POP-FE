@@ -4,7 +4,6 @@ import "@/styles/reset.css";
 import Layout from "@/components/Layout/Layout";
 import QueryProvider from "./_components/QueryProvider";
 import MockInterceptorProvider from "./_components/MockInterceptorProvider";
-import AppHeader from "@/components/AppHeader";
 
 export const metadata: Metadata = {
   title: "My App",
@@ -17,13 +16,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className="body">
         <QueryProvider>
           <Layout>
             <MockInterceptorProvider />
-            <AppHeader />
             {children}
           </Layout>
         </QueryProvider>
