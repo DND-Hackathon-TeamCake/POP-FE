@@ -1,0 +1,73 @@
+.container {
+  border-radius: 20px;
+  background: var(--Gray-01, #f6f8fd);
+}
+
+.idx0 {
+  display: flex;
+  height: 100px;
+  padding: 15px 20px;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+.idx1 {
+  display: flex;
+  width: 303px;
+  height: 100px;
+  padding: 15px 20px;
+  align-items: center;
+  gap: 10px;
+}
+.idx2 {
+  display: flex;
+  width: 253px;
+  height: 100px;
+  padding: 15px 20px;
+  align-items: center;
+  gap: 10px;
+}
+
+.wordContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 0 0;
+}
+
+.rankFont {
+  color: var(--point-red, #ff644c);
+
+  /* T/Title5 */
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 33.6px */
+}
+
+.regionContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.sub {
+  color: var(--gray-12, #15191b);
+
+  /* S/Subtitle4 */
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 16.8px */
+}
+.main {
+  color: var(--gray-12, #15191b);
+
+  /* T/Title5 */
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 33.6px */
+}
