@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
+import Record from "@/components/Record/Record";
 
-const page = () => {
-  return (
-    <div>
-
-    </div>
-  );
-};
-
-export default page;
+export default function Page({ params }: { params: { letterId: string } }) {
+  const letterId = Number(params.letterId);
+  return <Record letterId={letterId} />;
+}
