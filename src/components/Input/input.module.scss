@@ -1,0 +1,16 @@
+.container {
+  color: #000;
+
+  /* T/Title5 */
+  font-family: Pretendard;
+  // font-size: 24px;
+  font-style: normal;
+  // font-weight: 700;
+  line-height: 140%; /* 33.6px */
+  border-radius: 12px;
+  border: none;
+  width: 100%;
+  height: auto;
+  padding: 24px 20px 24px 20px;
+  background: var(--gray-02, #eef0f6);
+}
