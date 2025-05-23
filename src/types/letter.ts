@@ -1,7 +1,7 @@
 export interface letter {
-  letterId: number;
+  letterId?: number;
   content: string;
-  imageUrl?: string;
+  imageUrl?: string | null;
   region: string;
   createdAt?: string;
 }

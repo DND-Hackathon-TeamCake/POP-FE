@@ -3,7 +3,7 @@ import styles from "./Title.module.scss";
 
 interface TitleProps {
   title: string;
-  description: string;
+  description?: string;
 }
 
 const Title = ({ title, description }: TitleProps) => {
@@ -12,7 +12,7 @@ const Title = ({ title, description }: TitleProps) => {
       <div className={styles.group}>
         <div className={styles["text-wrapper"]}>{title}</div>
         <p className={styles.description}>
-          {description.split("\n").map((line, index) => (
+          {description?.split("\n").map((line, index) => (
             <React.Fragment key={index}>
               {line}
               <br />
