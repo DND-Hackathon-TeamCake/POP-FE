@@ -1,22 +1,18 @@
 "use client";
 
 import Button from "@/components/Button/Button";
-import useLocation from "@/hooks/useLocation";
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./MainPage.module.scss";
 import Icon from "@/components/Icon/Icon";
+import { useRouter } from "next/navigation";
 
 const MainPage = () => {
-  const { location, error, depthName } = useLocation();
-
-  useEffect(() => {
-    if (location) console.log(location);
-    if (depthName) console.log(depthName);
-    if (error) console.log("위치 권한 허용해라");
-  }, [location, error, depthName]);
+  const router = useRouter();
 
   const handleKakaoLogin = () => {
     console.log("로그인");
+    //로그인 처리 결과에 따라 갈지 말지 결정
+    router.push("/main");
   };
 
   return (

@@ -15,7 +15,7 @@ export const getLetterById = async (letterId: number): Promise<letter> => {
   return data;
 };
 
-export const generateLetter = async (params: letter) => {
+export const generateLetter = async (params: letter): Promise<number> => {
   const { status } = await axiosInstance.post("/api/letters", params);
   return status;
 };
