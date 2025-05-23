@@ -7,12 +7,17 @@ export const mockResponses = {
     letters: [
       {
         letterId: 1,
-        content: "다들 좋은 하루 보내세요~",
+        content: "다들 좋은 하루 보내세요1",
         createdAt: "25.05.24",
       },
       {
         letterId: 2,
-        content: "다들 좋은 하루 보내세요~",
+        content: "다들 좋은 하루 보내세요2",
+        createdAt: "25.05.24",
+      },
+      {
+        letterId: 3,
+        content: "다들 좋은 하루 보내세요3",
         createdAt: "25.05.24",
       },
     ],

@@ -3,7 +3,11 @@ import { mockResponses } from "./mockResponses";
 
 export function setupAxiosMockInterceptor(instance: AxiosInstance) {
   instance.interceptors.request.use((config) => {
-    const mock = mockResponses[config.url as keyof typeof mockResponses];
+    const url = config.url;
+    const region = config.params?.region;
+    const fullPath = `${url}?region=${region}`;
+
+    const mock = mockResponses[fullPath as keyof typeof mockResponses];
 
     if (mock) {
       return Promise.reject({

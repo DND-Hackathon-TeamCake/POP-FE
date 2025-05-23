@@ -1,7 +1,7 @@
 export const ICONS = {
   test: "/assets/icons/test.svg",
   kakao: "assets/icons/kakao.svg",
-  
+
   "motif1-blue": "/assets/icons/motif1-blue.svg",
   "motif1-green": "/assets/icons/motif1-green.svg",
   "motif1-purple": "/assets/icons/motif1-purple.svg",
@@ -31,6 +31,9 @@ export const ICONS = {
   "motif5-purple": "/assets/icons/motif5-purple.svg",
   "motif5-red": "/assets/icons/motif5-red.svg",
   "motif5-yellow": "/assets/icons/motif5-yellow.svg",
+
+  next: "/assets/icons/next.svg",
+  prev: "/assets/icons/prev.svg",
 } as const;
 
 export type IconList = keyof typeof ICONS;

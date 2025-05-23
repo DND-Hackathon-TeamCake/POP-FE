@@ -10,6 +10,7 @@
   align-self: center;
 
   .children {
+    overflow: hidden;
     width: 100%;
     max-width: 480px;
     min-width: 360px;
