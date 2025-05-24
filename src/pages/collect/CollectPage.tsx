@@ -25,13 +25,15 @@ const CollectPage = () => {
       content: "다들 좋은 하루 보내세요~",
       imageUrl: "https://gongmuin-bucket.s3.ap-northeast-2.amazonaws.com/images/78e57235-a6ce-48ad-a36c-fbd162cd41d0.jpg",
       region: "마포구",
-      createdAt: "25.05.24"
+      createdAt: "25.05.24",
+      letterId: 1
     },
     {
       content: "다들 좋은 하루 보내세요~",
       imageUrl: null,
       region: "은평구",
-      createdAt: "25.05.24"
+      createdAt: "25.05.24",
+      letterId: 2
     }
   ]
   useEffect(() => {
