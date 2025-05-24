@@ -9,28 +9,62 @@ import type { letter } from "@/types/letter";
 import Box from "../Box/Box";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
-import router from "next/router";
 import { useSelectedLetter } from "@/store/useSelectedLetter";
 import { useRouter } from "next/navigation";
+import { handleApi } from "@/utils/handleApi";
 
 const LetterList = () => {
-  const [letters, setLetters] = useState<letter[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
-  const swiperRef = useRef<any>(null); // Swiper 제어용
+  const swiperRef = useRef<import("swiper").Swiper | null>(null);
   const router = useRouter();
   const setSelectedLetter = useSelectedLetter((state) => state.setSelectedLetter);
+  const [letters, setLetters] = useState<letter[]>([]);
+
+  const dummy: letter[] = [
+    {
+      letterId: 1,
+      content: "다들 좋은 하루 보내세요~",
+      createdAt: "25.05.24",
+    },
+    {
+      letterId: 2,
+      content: "다들 좋은 하루 보내세요~",
+      createdAt: "25.05.24",
+    },
+    {
+      letterId: 3,
+      content: "다들 좋은 하루 보내세요~",
+      createdAt: "25.05.24",
+    },
+  ];
 
   useEffect(() => {
     const getLetters = async () => {
       try {
-        const result = await fetchAllLetter("마포구");
-        setLetters(result);
+        const { data } = await handleApi(() => fetchAllLetter("마포구"));
+        console.log(data);
+        if (data) setLetters(data);
+        else setLetters(dummy);
       } catch (error) {
+        setLetters(dummy);
         console.error(error);
       }
     };
     getLetters();
   }, []);
+
+  // useEffect(() => {
+  //   const getLetters = async () => {
+  //     try {
+  //       const { data } = await handleApi(() => fetchAllLetter("마포구"));
+  //       if (data) setLetters(data);
+  //       else setLetters(dummy);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   getLetters();
+  // }, []);
 
   const handlePickClick = () => {
     const letter = letters[activeIndex];
