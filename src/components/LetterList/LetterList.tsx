@@ -1,11 +1,15 @@
 "use client";
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Box from "../Box/Box";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
+import { useRouter } from "next/navigation";
 
 const LetterList = () => {
+  const router = useRouter();
+
   const letters = [
     { letterId: 1, content: "안녕하세요", createdAt: "25.05.24" },
     { letterId: 2, content: "좋은 하루 보내요~", createdAt: "25.05.25" },
@@ -13,10 +17,6 @@ const LetterList = () => {
     { letterId: 4, content: "하이하이", createdAt: "25.05.27" },
     { letterId: 5, content: "힘내세용", createdAt: "25.05.28" },
   ];
-
-  const handleLetterClick = (letterId: number) => {
-    console.log(`Letter ${letterId} clicked`);
-  };
 
   const [activeIndex, setActiveIndex] = useState(Math.floor(letters.length / 2));
   const [dragOffset, setDragOffset] = useState(0);
@@ -43,6 +43,13 @@ const LetterList = () => {
 
   const handleDrag = (event: unknown, info: { offset: { x: number } }) => {
     setDragOffset(info.offset.x);
+  };
+
+  const handlePick = (letterId?: number) => {
+    const targetId = letterId ?? letters[activeIndex]?.letterId;
+    if (targetId) {
+      router.push(`/letter/${targetId}`);
+    }
   };
 
   return (
@@ -114,7 +121,7 @@ const LetterList = () => {
                 type="blue"
                 timestamp={letter.createdAt}
                 content={letter.content}
-                onClick={() => handleLetterClick(letter.letterId)}
+                onClick={handlePick}
               />
             </motion.div>
           );
@@ -151,7 +158,7 @@ const LetterList = () => {
           <Icon name="prev" width={28} height={28} />
         </div>
 
-        <Button type="fill" size="s" onClick={() => alert("Pick!")}>
+        <Button type="fill" size="s" onClick={handlePick}>
           Pick
         </Button>
 
