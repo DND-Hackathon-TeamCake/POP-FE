@@ -1,8 +1,9 @@
 ## POP
 
-<div align='center'>
-<img src="https://github.com/user-attachments/assets/98949ac0-5ee4-48c1-a244-4dc48ab0a511" width=300/>
-</div>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/832ceb22-6ff1-49e4-bce0-be0ef3ced2d9" alt="Logo" width="300"/>
+</p>
+
 
 ## 🔎프로젝트 소개
 
