@@ -163,7 +163,7 @@ const LetterList = () => {
           <Icon name="prev" width={28} height={28} />
         </div>
 
-        <Button type="fill" size="s" onClick={handlePick}>
+        <Button type="fill" size="m" onClick={handlePick}>
           Pick
         </Button>
 
