@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelectedLetter } from "@/store/useSelectedLetter";
-import Header from "../Header/Header";
 import Button from "../Button/Button";
-import { getLetterById, storeLetter } from "@/services/letter";
 import styles from "./Record.module.scss";
 import { ICONS } from "@/constants/icons";
 import Icon from "../Icon/Icon";
