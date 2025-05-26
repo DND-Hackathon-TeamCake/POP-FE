@@ -33,3 +33,4 @@ POP은 단절된 도시 사회 속 이웃 간의 관계를 회복하기 위한 �
 ## 🖥SCREENS
 
 ## 🛠System Architecture
+![15](https://github.com/user-attachments/assets/ee32f063-33fb-4a79-b842-90335f81bd43)
