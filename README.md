@@ -1,8 +1,9 @@
 ## POP
 
-<div align='center'>
-<img src="https://github.com/user-attachments/assets/98949ac0-5ee4-48c1-a244-4dc48ab0a511" width=300/>
-</div>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/832ceb22-6ff1-49e4-bce0-be0ef3ced2d9" alt="Logo" width="300"/>
+</p>
+
 
 ## 🔎프로젝트 소개
 
@@ -30,5 +31,10 @@ POP은 단절된 도시 사회 속 이웃 간의 관계를 회복하기 위한 �
 - 누군가의 일상에 익명으로 선한 영향력 전달
 
 ## 🖥SCREENS
+![11](https://github.com/user-attachments/assets/ac9c58a0-d3b8-4298-8700-985b0f622a40)
+![13](https://github.com/user-attachments/assets/c80d1ccd-848b-49fb-b17b-f434ebb633d9)
+![14](https://github.com/user-attachments/assets/e1509056-d606-462a-9027-b830a3584c72)
+
 
 ## 🛠System Architecture
+![15](https://github.com/user-attachments/assets/ee32f063-33fb-4a79-b842-90335f81bd43)
