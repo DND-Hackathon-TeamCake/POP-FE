@@ -61,7 +61,7 @@ const LetterList = () => {
         padding: "60px 0",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
+        // alignItems: "center",
       }}
     >
       <div
@@ -132,10 +132,10 @@ const LetterList = () => {
         style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "center",
+          justifyContent: "space-evenly",
           alignItems: "center",
           marginTop: "80px",
-          gap: "20px",
+          // gap: "20px",
         }}
       >
         <div
