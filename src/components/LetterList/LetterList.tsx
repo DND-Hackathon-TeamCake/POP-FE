@@ -6,10 +6,11 @@ import Box from "../Box/Box";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 import { useRouter } from "next/navigation";
+import { useSelectedLetter } from "@/store/useSelectedLetter";
 
 const LetterList = () => {
   const router = useRouter();
-
+  const { setSelectedLetter } = useSelectedLetter();
   const letters = [
     { letterId: 1, content: "안녕하세요", createdAt: "25.05.24" },
     { letterId: 2, content: "좋은 하루 보내요~", createdAt: "25.05.25" },
@@ -46,9 +47,13 @@ const LetterList = () => {
   };
 
   const handlePick = (letterId?: number) => {
-    const targetId = letterId ?? letters[activeIndex]?.letterId;
-    if (targetId) {
-      router.push(`/letter/${targetId}`);
+    const target = letters.find(
+      (l) => l.letterId === (letterId ?? letters[activeIndex]?.letterId)
+    );
+
+    if (target) {
+      setSelectedLetter(target); // 선택한 편지 저장
+      router.push(`/letter/${target.letterId}`); // 페이지 이동
     }
   };
 
@@ -121,7 +126,7 @@ const LetterList = () => {
                 type="blue"
                 timestamp={letter.createdAt}
                 content={letter.content}
-                onClick={handlePick}
+                onClick={() => handlePick(letter.letterId)}
               />
             </motion.div>
           );
